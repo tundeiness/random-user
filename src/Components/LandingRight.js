@@ -9,7 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import axios from 'axios';
 // import Pagination from './Pagination';
-// import AllUsers from './AllUsers';
+import AllUsers from './AllUsers';
 // import api from '../api/index';
 // import Pagination from 'react-bootstrap/Pagination';
 
@@ -17,7 +17,7 @@ import '../fontawesome';
 
 const LandingRight = () => {
   const [check, setCheck] = useState(false);
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState([]);
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage, setuserPerPage] = useState(3);
@@ -68,7 +68,6 @@ const LandingRight = () => {
 
   // useEffect(() => fetchUsers().then(({ res }) => setUsers(res)), []);
 
-  useEffect(() => console.log(users));
   // useEffect(() => {
   // const fetchUsers = async () => {
   // setLoading(!loading);
@@ -80,11 +79,21 @@ const LandingRight = () => {
   // fetchUsers();
   // getAll();
   // }, []);
-  console.log(users);
 
   // console.log(femaleUsers);
 
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  //   const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    fetch('https://randomuser.me/api/?results=3')
+      .then(res => res.json())
+      .then(body => setUsers(body.results));
+    // const data = localStorage.getItem('data');
+    // setUsers(data);
+  }, []);
+
+  console.log(users);
+
   return (
     <Col md={6} sm={12} xs={12} className="right">
       <div className="d-flex flex-column right_content">
@@ -123,7 +132,7 @@ const LandingRight = () => {
             </div>
           </div>
           <div className="right-mid-matter">
-            {/* <AllUsers users={users} /> */}
+            <AllUsers users={users} />
             {/* <span>User listing</span>
             <div className="user-listing ">
               <div className="d-flex flex-row">
