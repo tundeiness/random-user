@@ -5,6 +5,7 @@
 // import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import '../fontawesome';
 
 const AllUsers = ({ users }) => {
@@ -49,6 +50,8 @@ const AllUsers = ({ users }) => {
   // useEffect(() => {
   //   handleApiData();
   // }, []);
+
+  console.log(users);
 
   const AllData = users.map(item => (
     <div key={uuid()} className="user-listing ">
@@ -102,6 +105,47 @@ const AllUsers = ({ users }) => {
       {AllData}
     </>
   );
+};
+
+AllUsers.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      cell: PropTypes.string,
+      dob: PropTypes.objectOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+          age: PropTypes.number,
+        }),
+      ),
+      id: PropTypes.objectOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          value: PropTypes.number,
+        }),
+      ),
+      gender: PropTypes.string,
+      name: PropTypes.number,
+      location: PropTypes.objectOf(
+        PropTypes.shape({
+          street: PropTypes.string,
+          city: PropTypes.string,
+          coordinates: PropTypes.objectOf(
+            PropTypes.shape({
+              longitude: PropTypes.string,
+              latitude: PropTypes.string,
+            }),
+          ),
+          state: PropTypes.string,
+          country: PropTypes.string,
+          postcode: PropTypes.number,
+          timezone: PropTypes.string,
+        }),
+      ),
+      email: PropTypes.string,
+      login: PropTypes.number,
+
+    }),
+  ).isRequired,
 };
 
 export default AllUsers;
