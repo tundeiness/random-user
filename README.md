@@ -1,3 +1,3 @@
 # Random User
 
-![](https://github.com/tundeiness/Random-User/workflows/Linters/badge.svg)
+![](https://github.com/tundeiness/random-user/workflows/Linters/badge.svg)
