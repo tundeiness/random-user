@@ -21,11 +21,16 @@ const LandingRight = () => {
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage, setuserPerPage] = useState(3);
+  const [display, setDisplay] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
 
   const handleCheck = () => {
     setCheck(!check);
+  };
+
+  const handleDisplay = () => {
+    setDisplay(!display);
   };
 
   const getAll = async () => {
