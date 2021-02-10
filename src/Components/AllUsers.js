@@ -117,14 +117,13 @@ AllUsers.propTypes = {
           age: PropTypes.number,
         }),
       ),
+      gender: PropTypes.string,
       id: PropTypes.objectOf(
         PropTypes.shape({
           name: PropTypes.string,
-          value: PropTypes.number,
+          value: PropTypes.string,
         }),
       ),
-      gender: PropTypes.string,
-      name: PropTypes.number,
       location: PropTypes.objectOf(
         PropTypes.shape({
           street: PropTypes.string,
@@ -141,8 +140,40 @@ AllUsers.propTypes = {
           timezone: PropTypes.string,
         }),
       ),
+      login: PropTypes.objectOf(
+        PropTypes.shape({
+          uuid: PropTypes.string,
+          username: PropTypes.string,
+          password: PropTypes.string,
+          salt: PropTypes.string,
+          md5: PropTypes.string,
+          sha256: PropTypes.string,
+          sha1: PropTypes.string,
+        }),
+      ),
+      name: PropTypes.objectOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          first: PropTypes.string,
+          last: PropTypes.string,
+        }),
+      ),
+      nat: PropTypes.string,
+      phone: PropTypes.string,
+      picture: PropTypes.objectOf(
+        PropTypes.shape({
+          large: PropTypes.string,
+          medium: PropTypes.string,
+          thumbnail: PropTypes.string,
+        }),
+      ),
+      registered: PropTypes.objectOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+          age: PropTypes.number,
+        }),
+      ),
       email: PropTypes.string,
-      login: PropTypes.number,
 
     }),
   ).isRequired,
