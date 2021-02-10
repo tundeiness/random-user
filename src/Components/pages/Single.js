@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { FaArrowLeft } from 'react-icons/fa';
+import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
 const Single = () => {
@@ -18,10 +20,10 @@ const Single = () => {
   };
 
   return (
-    <Col md={6} sm={12} xs={12} className="right">
-      <div className="d-flex flex-column right_content">
-        <div className="d-flex flex-column right-content-guard">
-          <div className="right-top-matter">
+    <Col md={6} sm={12} xs={12} className="right px-0">
+      {/* <div className="d-flex flex-column right_content">
+        <div className="d-flex flex-column right-content-guard"> */}
+      {/* <div className="right-top-matter">
             <span className="d-block heading-right">User List</span>
             <span className="d-block sub-heading-right">filter by</span>
             <div className="d-flex justify-content-between toggle-search-wrapper">
@@ -53,26 +55,36 @@ const Single = () => {
                 <span className=" d-block toggle-name">Show Country</span>
               </div>
             </div>
+          </div> */}
+      <div className="d-flex flex-row justify-content-between right-single">
+        <div className="d-flex flex-column border border-success">
+          <span className={`${styles.span}`}>
+            <FaArrowLeft className={`${styles.arrowLeft}`} />
+            Results
+          </span>
+          <div className={`${styles.singleImgContainer}`}>
+            <img
+              src="https://user-images.githubusercontent.com/25479050/100477423-98db8000-30e8-11eb-948b-fe31e1b03f5e.png"
+              className={`${styles.img} card-img img-fluid`}
+              alt="user"
+            />
           </div>
-          <div className="d-flex flex-row right-single">
-            <div className="d-flex flex-column">
-              <div>First column</div>
-            </div>
-            <div className="d-flex flex-column">
-              <div>Middle column</div>
-            </div>
-            <div>
-              Last column
-            </div>
-          </div>
-          <div className=" d-flex  justify-content-between right-bottom-matter">
+        </div>
+        <div className="d-flex flex-column">
+          <div>Middle column</div>
+        </div>
+        <div>
+          Last column
+        </div>
+      </div>
+      {/* <div className=" d-flex  justify-content-between right-bottom-matter">
             <button type="submit" aria-label="Search">
               <i className="lni lni-cloud-download d-inline-block" />
               <span className="d-inline-block">Download results</span>
             </button>
-          </div>
-        </div>
-      </div>
+          </div> */}
+      {/* </div>
+      </div> */}
     </Col>
   );
 };

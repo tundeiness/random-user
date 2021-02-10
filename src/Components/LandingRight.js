@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import axios from 'axios';
 // import Pagination from './Pagination';
 import AllUsers from './AllUsers';
+import Single from './pages/Single';
 // import api from '../api/index';
 // import Pagination from 'react-bootstrap/Pagination';
 
@@ -137,7 +138,8 @@ const LandingRight = () => {
             </div>
           </div>
           <div className="right-mid-matter">
-            <AllUsers users={users} />
+            {/* <AllUsers users={users} /> */}
+            <Single />
             {/* <span>User listing</span>
             <div className="user-listing ">
               <div className="d-flex flex-row">

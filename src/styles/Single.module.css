@@ -1,0 +1,19 @@
+.span{
+    color: #000;
+    text-transform: uppercase;
+}
+
+.arrowLeft {
+    color: #75d6d1;
+}
+
+.singleImgContainer {
+    /* width: 90%; */
+    margin-bottom: 3rem;
+}
+
+.img {
+    /* margin: .5rem auto; */
+    border:5px solid #75D6D1;
+    border-radius: 80px !important;
+  }
