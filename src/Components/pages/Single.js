@@ -76,6 +76,12 @@ const Single = () => {
             <span className={styles.mid_age}>25</span>
           </div>
           <span className={styles.mid_address}>927 new road, kilcoole waterford</span>
+          <span className={styles.mid_email}>bradford@example.com</span>
+          <div className={styles.other_wrapper}>
+            <span className={styles.join_date}>Mrs Shalom Chioma</span>
+            <span className={styles.mid_tel}>25</span>
+            <span className={styles.mid_cell}>25</span>
+          </div>
         </div>
         <div>
           Last column
