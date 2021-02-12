@@ -20,7 +20,7 @@ const Single = () => {
   };
 
   return (
-    <Col md={6} sm={12} xs={12} className="right px-0">
+    <>
       {/* <div className="d-flex flex-column right_content">
         <div className="d-flex flex-column right-content-guard"> */}
       {/* <div className="right-top-matter">
@@ -56,8 +56,8 @@ const Single = () => {
               </div>
             </div>
           </div> */}
-      <div className="d-flex flex-row justify-content-between right-single">
-        <div className="d-flex flex-column border border-success">
+      <div className={`${styles.rightSingle} d-flex flex-row`}>
+        <div className={`${styles.imgContainer} d-flex flex-column border border-success`}>
           <span className={`${styles.span}`}>
             <FaArrowLeft className={`${styles.arrowLeft}`} />
             Results
@@ -70,8 +70,12 @@ const Single = () => {
             />
           </div>
         </div>
-        <div className="d-flex flex-column">
-          <div>Middle column</div>
+        <div className="d-flex flex-column border border-danger">
+          <div className={styles.detail_wrapper}>
+            <span className={styles.mid_name}>Mrs Shalom Chioma</span>
+            <span className={styles.mid_age}>25</span>
+          </div>
+          <span className={styles.mid_address}>927 new road, kilcoole waterford</span>
         </div>
         <div>
           Last column
@@ -85,7 +89,7 @@ const Single = () => {
           </div> */}
       {/* </div>
       </div> */}
-    </Col>
+    </>
   );
 };
 

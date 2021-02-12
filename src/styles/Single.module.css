@@ -1,3 +1,7 @@
+.rightSingle {
+    width: auto;
+}
+
 .span{
     color: #000;
     text-transform: uppercase;
@@ -8,12 +12,35 @@
 }
 
 .singleImgContainer {
-    /* width: 90%; */
+    width: 90%;
     margin-bottom: 3rem;
 }
+
+/* .imgContainer {
+    width: 130%;
+} */
 
 .img {
     /* margin: .5rem auto; */
     border:5px solid #75D6D1;
-    border-radius: 80px !important;
+    border-radius: 100px !important;
+  }
+
+  .mid_name {
+    text-align: left;
+    /* font: normal normal bold 32px/105px Poppins; */
+    font-style: bold;
+    font-family: Poppins;
+    font-size: 1rem;
+    letter-spacing: -0.03px;
+    color: #262A41;
+    opacity: 1;
+  }
+
+  .mid_age {
+      
+  }
+
+  .mid_address {
+
   }
