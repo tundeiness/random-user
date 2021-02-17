@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FaArrowLeft } from 'react-icons/fa';
+import { BiEnvelope } from 'react-icons/bi';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
@@ -72,11 +73,15 @@ const Single = () => {
         </div>
         <div className="d-flex flex-column border border-danger">
           <div className={styles.detail_wrapper}>
-            <span className={styles.mid_name}>Mrs Shalom Chioma</span>
+            <span className={styles.mid_name}>Mrs. Shalom Chioma</span>
             <span className={styles.mid_age}>25</span>
           </div>
-          <span className={styles.mid_address}>927 new road, kilcoole waterford</span>
-          <span className={styles.mid_email}>bradford@example.com</span>
+          <span className={styles.mid_address}>9278 new road, kilcoole waterford</span>
+          <div className={`${styles.mid_email}`}>
+            <span><BiEnvelope className={`${styles.biEnvelope}`} /></span>
+            {' '}
+            <span>bradford@example.com</span>
+          </div>
           <div className={styles.other_wrapper}>
             <span className={styles.join_date}>Mrs Shalom Chioma</span>
             <span className={styles.mid_tel}>25</span>

@@ -29,25 +29,79 @@
   .mid_name {
     text-align: left;
     /* font: normal normal bold 32px/105px Poppins; */
-    font-style: bold;
+    font-weight: bold;
     font-family: Poppins;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 2;
     letter-spacing: -0.03px;
     color: #262A41;
     opacity: 1;
   }
 
   .mid_age {
-      
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 1.1rem;
+    padding-left: 0.2rem;
+    /* font: normal normal 200 32px/105px Poppins; */
+    /* letter-spacing: -0.03px; */
+    color: #262A41;
+    opacity: 1;
   }
 
   .mid_address {
-
+    text-align: left;
+    font-weight: 300;
+    font-family: Poppins;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    /* font: normal normal 300 23px/98px Poppins; */
+    letter-spacing: -0.02px;
+    color: #262A41;
+    opacity: 0.69;
   }
 
   .mid_email {
+    /* background-color: #fcfcff; */
+    background-color: gainsboro;
+    /* padding-top: 0.1rem;
+    padding-bottom: 0.1rem; */
+    border-radius: 1rem;
+    /* box-shadow: 10px 10px 40px #0000000D; */
+    /* background: #FCFCFF 0% 0% no-repeat padding-box; */
 
+    /* text-align: left; */
+    /* font: normal normal medium 18px/68px Poppins; */
+    font-family: Poppins;
+    font-size: 0.8rem;
+    /* font-weight:medium; */
+    /* letter-spacing: -0.02px; */
+    color: #262A41;
+    opacity: 0.52;
+    display:inline-block;
+    width: max-content;
+    margin-top: .7rem;
   }
+
+  .biEnvelope {
+    /* padding-left: 1rem; */
+  }
+
+  .mid_email > span:nth-child(1) {
+    padding-left: 0.6rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
+    display:inline-block;
+}
+
+  .mid_email > span:nth-child(2) {
+      padding-right: 0.6rem;
+      padding-bottom: 0.2rem;
+      padding-top: 0.2rem;
+      display:inline-block;
+  }
+
 
   .other_wrapper {
 
