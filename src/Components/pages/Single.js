@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FaArrowLeft } from 'react-icons/fa';
-import { BiEnvelope } from 'react-icons/bi';
+import { BiEnvelope, BiPhoneCall } from 'react-icons/bi';
+import { MdPhoneAndroid } from 'react-icons/md';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
@@ -83,9 +84,17 @@ const Single = () => {
             <span>bradford@example.com</span>
           </div>
           <div className={styles.other_wrapper}>
-            <span className={styles.join_date}>Mrs Shalom Chioma</span>
-            <span className={styles.mid_tel}>25</span>
-            <span className={styles.mid_cell}>25</span>
+            <span className={styles.join_date}>Joined: 22-05-21</span>
+            <div className={styles.mid_tel}>
+              <span><BiPhoneCall className={`${styles.biPhoneCall}`} /></span>
+              {' '}
+              <span>011-456-2111</span>
+            </div>
+            <div className={styles.mid_cell}>
+              <span><MdPhoneAndroid className={`${styles.biPhoneAndroid}`} /></span>
+              {' '}
+              <span>011-962-7512</span>
+            </div>
           </div>
         </div>
         <div>

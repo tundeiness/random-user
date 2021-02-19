@@ -104,14 +104,69 @@
 
 
   .other_wrapper {
-
+    margin-top: 0.5rem;
   }
 
   .join_date {
-
+    background: #F935A9 0% 0% no-repeat padding-box;
+    opacity: 0.15;
+    border-radius: 1rem;
+    font-family: Poppins;
+    font-size: 0.7rem;
+    /* font: normal normal 600 16px/66px Poppins; */
+    letter-spacing: -0.18px;
+    /* color: #262A41; */
+    text-transform: uppercase;
+    /* padding-left: 0.6rem;
+    padding-right: 0.6rem; */
+    padding: 0.2rem 0.7rem;
+    /* opacity: 0.7; */
   }
 
   .mid_tel {
+    margin-top: 0.6rem;
+  }
+
+  .mid_tel > span:nth-child(1) {
+    /* border: 2px solid #BABDD1; */
+    color: #babdd1;
+    opacity: 1;
+    
+  }
+
+
+  .mid_tel > span:nth-child(2) {
+    text-align: left;
+/* font: normal normal medium 17px/68px Poppins; */
+    letter-spacing: -0.02px;
+    color: #262A41;
+    opacity: 0.52;
+    font-size: .7rem;
+  }
+
+
+  .mid_cell > span:nth-child(1) {
+    /* border: 2px solid #BABDD1; */
+    color: #babdd1;
+    opacity: 1;
+  }
+
+
+
+  .mid_cell > span:nth-child(2) {
+    text-align: left;
+/* font: normal normal medium 17px/68px Poppins; */
+    letter-spacing: -0.02px;
+    color: #262A41;
+    opacity: 0.52;
+    font-size: .7rem;
+  }
+
+  .biPhoneCall {
+
+  }
+
+  .biPhoneAndroid {
 
   }
 
