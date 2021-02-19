@@ -26,6 +26,10 @@
     border-radius: 100px !important;
   }
 
+  .detail_wrapper {
+    margin-top: 4rem;
+  }
+
   .mid_name {
     text-align: left;
     /* font: normal normal bold 32px/105px Poppins; */
