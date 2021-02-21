@@ -60,10 +60,10 @@ const Single = () => {
           </div> */}
       <div className={`${styles.rightSingle} d-flex flex-row`}>
         <div className={`${styles.imgContainer} d-flex flex-column border border-success`}>
-          <span className={`${styles.span}`}>
+          <div className={`${styles.span}`}>
             <FaArrowLeft className={`${styles.arrowLeft}`} />
-            Results
-          </span>
+            <span className={`${styles.inner_span}`}>Results</span>
+          </div>
           <div className={`${styles.singleImgContainer}`}>
             <img
               src="https://user-images.githubusercontent.com/25479050/100477423-98db8000-30e8-11eb-948b-fe31e1b03f5e.png"
@@ -84,7 +84,11 @@ const Single = () => {
             <span>bradford@example.com</span>
           </div>
           <div className={styles.other_wrapper}>
-            <span className={styles.join_date}>Joined: 22-05-21</span>
+            <span className={styles.join_date}>
+              Joined:
+              {' '}
+              <span>22-05-21</span>
+            </span>
             <div className={styles.mid_tel}>
               <span><BiPhoneCall className={`${styles.biPhoneCall}`} /></span>
               {' '}
@@ -97,9 +101,9 @@ const Single = () => {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           Last column
-        </div>
+        </div> */}
       </div>
       {/* <div className=" d-flex  justify-content-between right-bottom-matter">
             <button type="submit" aria-label="Search">

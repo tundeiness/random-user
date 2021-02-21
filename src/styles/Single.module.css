@@ -1,10 +1,22 @@
 .rightSingle {
     width: auto;
+    margin-top: 3.5rem;
 }
 
-.span{
-    color: #000;
-    text-transform: uppercase;
+.span {
+  color: #000;
+  text-transform: uppercase;
+  margin: 0 1rem;
+}
+
+
+.inner_span {
+  font-size: .9rem;
+  font-family: Poppins;
+  color:  #262A41;
+  opacity: 0.6;
+  font-weight: 500;
+  margin-left: 0.8rem;
 }
 
 .arrowLeft {
@@ -12,7 +24,8 @@
 }
 
 .singleImgContainer {
-    width: 90%;
+    width: 85%;
+    margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
@@ -27,7 +40,7 @@
   }
 
   .detail_wrapper {
-    margin-top: 4rem;
+    margin-top: 4.2rem;
   }
 
   .mid_name {
@@ -35,9 +48,9 @@
     /* font: normal normal bold 32px/105px Poppins; */
     font-weight: bold;
     font-family: Poppins;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 2;
-    letter-spacing: -0.03px;
+    letter-spacing: 0.9px;
     color: #262A41;
     opacity: 1;
   }
@@ -46,7 +59,7 @@
     text-align: left;
     font-family: Poppins;
     font-weight: 200;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     padding-left: 0.2rem;
     /* font: normal normal 200 32px/105px Poppins; */
     /* letter-spacing: -0.03px; */
@@ -58,8 +71,9 @@
     text-align: left;
     font-weight: 300;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.5;
+    margin-top: 9px;
     /* font: normal normal 300 23px/98px Poppins; */
     letter-spacing: -0.02px;
     color: #262A41;
@@ -85,7 +99,7 @@
     opacity: 0.52;
     display:inline-block;
     width: max-content;
-    margin-top: .7rem;
+    margin-top: .9rem;
   }
 
   .biEnvelope {
@@ -93,27 +107,32 @@
   }
 
   .mid_email > span:nth-child(1) {
-    padding-left: 0.6rem;
+    padding-left: 0.8rem;
     padding-bottom: 0.2rem;
     padding-top: 0.2rem;
     display:inline-block;
 }
 
   .mid_email > span:nth-child(2) {
-      padding-right: 0.6rem;
-      padding-bottom: 0.2rem;
-      padding-top: 0.2rem;
+      padding-right: 0.8rem;
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
       display:inline-block;
   }
 
 
   .other_wrapper {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .other_wrapper > span:nth-child(1) { 
+    color: rgba(38, 42, 65, 0.7);
   }
 
   .join_date {
-    background: #F935A9 0% 0% no-repeat padding-box;
-    opacity: 0.15;
+    /* background-color: #F935A9 0% 0% no-repeat padding-box; */
+    /* opacity: 0.15; */
+    background: rgba(249, 53, 169, 0.15);
     border-radius: 1rem;
     font-family: Poppins;
     font-size: 0.7rem;
@@ -123,12 +142,14 @@
     text-transform: uppercase;
     /* padding-left: 0.6rem;
     padding-right: 0.6rem; */
-    padding: 0.2rem 0.7rem;
+    padding: 0.5rem 0.7rem;
+    /* color: gainsboro!important; */
+    /* color: rgba(38, 42, 65, 0.7); */
     /* opacity: 0.7; */
   }
 
   .mid_tel {
-    margin-top: 0.6rem;
+    margin-top: 1rem;
   }
 
   .mid_tel > span:nth-child(1) {
@@ -145,7 +166,11 @@
     letter-spacing: -0.02px;
     color: #262A41;
     opacity: 0.52;
-    font-size: .7rem;
+    font-size: 0.7rem;
+  }
+
+  .mid_cell {
+    margin-top: 0.7rem;
   }
 
 
