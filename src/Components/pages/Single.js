@@ -11,6 +11,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { FaArrowLeft } from 'react-icons/fa';
 import { BiEnvelope, BiPhoneCall } from 'react-icons/bi';
 import { MdPhoneAndroid } from 'react-icons/md';
+import { IoIosCloudDownload } from 'react-icons/io';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
