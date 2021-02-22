@@ -182,7 +182,7 @@ const LandingRight = () => {
           <div className=" d-flex  justify-content-between right-bottom-matter">
             <button type="submit" aria-label="Search">
               {/* <i className="lni lni-cloud-download d-inline-block" /> */}
-              <IoIosCloudDownload className="d-inline-block" style={{ color: 'white', fontSize: '1.5rem' }} />
+              <IoIosCloudDownload className="d-inline-block cloud-download" style={{ color: 'white', fontSize: '1.5rem' }} />
               <span className="d-inline-block">Download results</span>
             </button>
             <div className="pagination-sm paging">

@@ -306,7 +306,7 @@ div.collections {
 .right-content-guard {
   border: 1px solid green;
   width: 85%;
-  margin: 0 auto;
+  margin: 1.6rem auto;
 }
 
 
@@ -608,7 +608,8 @@ div.single-link button {
 
 
 .right-bottom-matter {
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 div.right-bottom-matter button {
@@ -624,20 +625,26 @@ div.right-bottom-matter button span{
   /* font: normal normal 600 17px/66px Poppins; */
   font-family: Poppins;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: -0.19px;
   color: #FFFFFF;
   opacity: 1;
   /* margin-top: -.1rem; */
-  margin-right: .2rem;
+  margin-right: 1rem;
+  margin-left: 0.9rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 
-.lni-cloud-download {
-  color: #fff;
-  margin-right: .3rem;
+.cloud-download {
+  margin-left: 0.7rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
+  /* color: #fff; */
+  /* margin-right: .3rem;
   margin-left: .2rem;
-  margin-bottom: .5rem;
+  margin-bottom: .5rem; */
   /* padding-top: .2rem !important; */
 }
 
