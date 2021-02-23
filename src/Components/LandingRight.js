@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
@@ -10,6 +11,7 @@ import { IoIosCloudDownload } from 'react-icons/io';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import axios from 'axios';
 // import Pagination from './Pagination';
+import PropTypes from 'prop-types';
 import AllUsers from './AllUsers';
 import Single from './pages/Single';
 // import api from '../api/index';
@@ -17,7 +19,7 @@ import Single from './pages/Single';
 
 import '../fontawesome';
 
-const LandingRight = () => {
+const LandingRight = ({ total }) => {
   const [check, setCheck] = useState(false);
   const [users, setUsers] = useState([]);
   // const [loading, setLoading] = useState(false);
@@ -100,6 +102,21 @@ const LandingRight = () => {
   }, []);
 
   console.log(users);
+  // console.log(total);
+
+  const filterMale = users.filter(data => {
+    if (data.gender === 'male') {
+      return data;
+    }
+    return null;
+  });
+
+  const filterFemale = users.filter(data => {
+    if (data.gender === 'female') {
+      return data;
+    }
+    return null;
+  });
 
   return (
     <Col md={6} sm={12} xs={12} className="right">
@@ -139,8 +156,8 @@ const LandingRight = () => {
             </div>
           </div>
           <div className="right-mid-matter">
-            {/* <AllUsers users={users} /> */}
-            <Single />
+            <AllUsers users={users} />
+            {/* <Single /> */}
             {/* <span>User listing</span>
             <div className="user-listing ">
               <div className="d-flex flex-row">
@@ -196,5 +213,13 @@ const LandingRight = () => {
     </Col>
   );
 };
+
+// LandingRight.propTypes = {
+//   total: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       cell: PropTypes.string,
+//     }),
+//   ).isRequired,
+// };
 
 export default LandingRight;
