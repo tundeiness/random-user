@@ -12,13 +12,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import axios from 'axios';
 // import Pagination from './Pagination';
 import PropTypes from 'prop-types';
-import Country from 'Country';
+// import Country from 'Country';
 import AllUsers from './AllUsers';
+import Male from './pages/Male';
+import Female from './pages/Female';
 import Single from './pages/Single';
 // import api from '../api/index';
 // import Pagination from 'react-bootstrap/Pagination';
 
 import '../fontawesome';
+
+const ENUM_STATES = {
+  male: <Male />,
+  female: <Female />,
+  single: <Single />,
+  default: <AllUsers />,
+};
 
 const LandingRight = ({ total }) => {
   const [check, setCheck] = useState(false);
@@ -29,8 +38,33 @@ const LandingRight = ({ total }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage, setuserPerPage] = useState(3);
   const [display, setDisplay] = useState(false);
+  const [male, setMale] = useState(false);
+  const [female, setFemale] = useState(false);
+  const [single, setSingle] = useState(false);
+  const [all, setAll] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
+
+  const handleClickMale = () => {
+    setMale(!male);
+    setFemale(female);
+    setSingle(single);
+    setAll(all);
+  };
+
+  const handleClickFemale = () => {
+    setFemale(!female);
+    setMale(male);
+    setSingle(single);
+    setAll(all);
+  };
+
+  const handleClickSingle = () => {
+    setSingle(!single);
+    setFemale(female);
+    setMale(male);
+    setAll(all);
+  };
 
   const handleSearch = event => {
     setSearchedUser(event.target.value);
@@ -129,6 +163,13 @@ const LandingRight = ({ total }) => {
 
   const filterFemale = users.filter(data => {
     if (data.gender === 'female') {
+      return data;
+    }
+    return null;
+  });
+
+  const filterCountry = users.filter(data => {
+    if (data.location.country === country) {
       return data;
     }
     return null;
