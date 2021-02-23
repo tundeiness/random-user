@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import axios from 'axios';
 // import Pagination from './Pagination';
 import PropTypes from 'prop-types';
+import Country from 'Country';
 import AllUsers from './AllUsers';
 import Single from './pages/Single';
 // import api from '../api/index';
@@ -22,12 +23,22 @@ import '../fontawesome';
 const LandingRight = ({ total }) => {
   const [check, setCheck] = useState(false);
   const [users, setUsers] = useState([]);
+  const [searchedUser, setSearchedUser] = useState('');
+  const [country, setCountry] = useState('');
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage, setuserPerPage] = useState(3);
   const [display, setDisplay] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
+
+  const handleSearch = event => {
+    setSearchedUser(event.target.value);
+  };
+
+  const handleSelect = event => {
+    setCountry(event.target.value);
+  };
 
   const handleCheck = () => {
     setCheck(!check);
@@ -104,6 +115,11 @@ const LandingRight = ({ total }) => {
   console.log(users);
   // console.log(total);
 
+  const filteredCountries = users.filter(
+    data => data.location.country.toLowerCase().includes(country.toLowerCase()),
+    // country.region.toLowerCase().includes(region.toLocaleLowerCase())
+  );
+
   const filterMale = users.filter(data => {
     if (data.gender === 'male') {
       return data;
@@ -143,6 +159,7 @@ const LandingRight = ({ total }) => {
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Another</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Something</Dropdown.Item>
+                    {/* <Country filteredCountries={filteredCountries} /> */}
                   </Dropdown.Menu>
                 </Dropdown>
               </div>
