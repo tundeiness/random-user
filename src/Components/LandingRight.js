@@ -37,33 +37,25 @@ const LandingRight = ({ total }) => {
   // const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage, setuserPerPage] = useState(3);
-  const [display, setDisplay] = useState(false);
+  // const [display, setDisplay] = useState(false);
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
   const [single, setSingle] = useState(false);
-  const [all, setAll] = useState(false);
+  // const [all, setAll] = useState(false);
+  const [click, setClick] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
 
   const handleClickMale = () => {
     setMale(!male);
-    setFemale(female);
-    setSingle(single);
-    setAll(all);
   };
 
   const handleClickFemale = () => {
     setFemale(!female);
-    setMale(male);
-    setSingle(single);
-    setAll(all);
   };
 
   const handleClickSingle = () => {
     setSingle(!single);
-    setFemale(female);
-    setMale(male);
-    setAll(all);
   };
 
   const handleSearch = event => {
@@ -78,9 +70,13 @@ const LandingRight = ({ total }) => {
     setCheck(!check);
   };
 
-  const handleDisplay = () => {
-    setDisplay(!display);
+  const handleClick = () => {
+    setClick(!click);
   };
+
+  // const handleDisplay = () => {
+  //   setDisplay(!display);
+  // };
 
   const getAll = async () => {
     // setLoading(!loading);
@@ -214,7 +210,19 @@ const LandingRight = ({ total }) => {
             </div>
           </div>
           <div className="right-mid-matter">
-            <AllUsers users={users} />
+            {/* <AllUsers users={users} /> */}
+            {/* {click && <Male />}
+            {click && <Female />}
+            {click && <Single />}
+            {!click && (
+            <>
+              <AllUsers users={users} />
+            </>
+            )} */}
+            {male && <Male maleUsers={filterMale} />}
+            {female && <Female femaleUsers={filterFemale} />}
+            {single && <Single />}
+            {!male && !female && !single && <AllUsers users={users} />}
             {/* <Single /> */}
             {/* <span>User listing</span>
             <div className="user-listing ">

@@ -3,8 +3,8 @@
 import uuid from 'react-uuid';
 // import IoIosArrowForward from 'react-icons/io';
 
-const Female = ({ allFemale }) => {
-  const Female = allFemale.map(item => (
+const Female = ({ femaleUsers }) => {
+  const Female = femaleUsers.map(item => (
     <div key={uuid()} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
