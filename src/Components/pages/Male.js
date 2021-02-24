@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import React, { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
-import IoIosArrowForward from 'react-icons/io';
+// import IoIosArrowForward from 'react-icons/io';
 
 const Male = ({ allMale }) => {
   const Male = allMale.map(item => (
@@ -44,7 +44,7 @@ const Male = ({ allMale }) => {
           <div />
           <div />
           <button type="submit" aria-label="Search">
-            <IoIosArrowForward className="arrow-icon" icon="arrow-right" />
+            {/* <IoIosArrowForward className="arrow-icon" icon="arrow-right" /> */}
           </button>
         </div>
       </div>

@@ -55,7 +55,7 @@ body {
 .right_content {
   border: 1px solid wheat;
   background-color: #fff;
-  margin: 1.75rem .1rem;
+  margin: 1rem .1rem;
 }
 
 
@@ -306,7 +306,7 @@ div.collections {
 .right-content-guard {
   border: 1px solid green;
   width: 85%;
-  margin: 1.6rem auto;
+  margin: 0.8rem auto;
 }
 
 
@@ -608,7 +608,7 @@ div.single-link button {
 
 
 .right-bottom-matter {
-  margin-top: 1.4rem;
+  margin-top: 0.4rem;
   /* margin-bottom: 1.5rem; */
 }
 
