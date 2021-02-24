@@ -53,7 +53,8 @@ const Male = ({ maleUsers }) => {
 
   return (
     <>
-      <Male />
+      {/* <Male /> */}
+      {Male}
     </>
   );
 };

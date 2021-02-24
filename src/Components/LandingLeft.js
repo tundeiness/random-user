@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 // import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import LandingRight from './LandingRight';
 import '../fontawesome';
 
-const Landing = () => {
+const Landing = ({ handleMale, handleFemale }) => {
   const [big, setShowBig] = useState(false);
 
   const toggleIcon = () => {
@@ -39,13 +40,13 @@ const Landing = () => {
               </button>
               <span>All Users</span>
             </div>
-            <div className="d-flex flex-column male-wrapper pr-4">
+            <div className="d-flex flex-column male-wrapper pr-4" onClick={() => handleMale} onKeyPress={handleMale} role="button" aria-hidden>
               <button type="button" className="btn-male">
                 <FontAwesomeIcon className="male-icon" icon="male" style={{ color: '#fff' }} />
               </button>
               <span>Male Users</span>
             </div>
-            <div className="d-flex flex-column female-wrapper">
+            <div className="d-flex flex-column female-wrapper" onClick={() => handleFemale} onKeyPress={handleFemale} role="button" aria-hidden>
               <button type="button" className="btn-female">
                 <FontAwesomeIcon className="female-icon" icon="female" style={{ color: '#fff' }} />
               </button>
@@ -57,6 +58,11 @@ const Landing = () => {
     </Col>
 
   );
+};
+
+Landing.propTypes = {
+  handleMale: PropTypes.func.isRequired,
+  handleFemale: PropTypes.func.isRequired,
 };
 
 export default Landing;

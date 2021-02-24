@@ -22,14 +22,7 @@ import Single from './pages/Single';
 
 import '../fontawesome';
 
-const ENUM_STATES = {
-  male: <Male />,
-  female: <Female />,
-  single: <Single />,
-  default: <AllUsers />,
-};
-
-const LandingRight = ({ total }) => {
+const LandingRight = ({ handleMale, handleFemale }) => {
   const [check, setCheck] = useState(false);
   const [users, setUsers] = useState([]);
   const [searchedUser, setSearchedUser] = useState('');
@@ -42,7 +35,7 @@ const LandingRight = ({ total }) => {
   const [female, setFemale] = useState(false);
   const [single, setSingle] = useState(false);
   // const [all, setAll] = useState(false);
-  const [click, setClick] = useState(false);
+  // const [click, setClick] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
 
@@ -70,9 +63,9 @@ const LandingRight = ({ total }) => {
     setCheck(!check);
   };
 
-  const handleClick = () => {
-    setClick(!click);
-  };
+  // const handleClick = () => {
+  //   setClick(!click);
+  // };
 
   // const handleDisplay = () => {
   //   setDisplay(!display);
@@ -219,10 +212,10 @@ const LandingRight = ({ total }) => {
               <AllUsers users={users} />
             </>
             )} */}
-            {male && <Male maleUsers={filterMale} />}
-            {female && <Female femaleUsers={filterFemale} />}
+            {handleMale && <Male maleUsers={filterMale} />}
+            {handleFemale && <Female femaleUsers={filterFemale} />}
             {single && <Single />}
-            {!male && !female && !single && <AllUsers users={users} />}
+            {!handleMale && !handleFemale && !single && <AllUsers users={users} />}
             {/* <Single /> */}
             {/* <span>User listing</span>
             <div className="user-listing ">
@@ -287,5 +280,10 @@ const LandingRight = ({ total }) => {
 //     }),
 //   ).isRequired,
 // };
+
+LandingRight.propTypes = {
+  handleMale: PropTypes.func.isRequired,
+  handleFemale: PropTypes.func.isRequired,
+};
 
 export default LandingRight;
