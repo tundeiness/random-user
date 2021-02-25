@@ -2,17 +2,20 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-// import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
+import { BsArrowRightShort } from 'react-icons/bs';
+import Single from './pages/Single';
 import '../fontawesome';
 
 const AllUsers = ({ users }) => {
   // if (loading) {
   //   return <h2>Loading...</h2>;
   // }
-
+  const [single, setSingle] = useState(false);
+  const [id, setId] = useState('');
   // const data = users;
   // console.log(users);
   // console.log(data);
@@ -50,11 +53,22 @@ const AllUsers = ({ users }) => {
   // useEffect(() => {
   //   handleApiData();
   // }, []);
+  const handleClickSingle = e => {
+    setId(e.target.id);
+    setSingle(!single);
+  };
+
+  const filterSingle = users.filter(data => {
+    if (data.id.value === id) {
+      return data;
+    }
+    return null;
+  });
 
   console.log(users);
 
   const AllData = users.map(item => (
-    <div key={uuid()} className="user-listing ">
+    <div key={uuid()} id={`${item.id.value}`} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
           <img src={item.picture.large} className="card-img img-fluid" alt={item.name.first} />
@@ -89,20 +103,20 @@ const AllUsers = ({ users }) => {
             </div>
           </div>
         </div>
-        <div className="single-link d-flex flex-column justify-content-around align-items-center">
+        {/* <div className="single-link d-flex flex-column justify-content-around align-items-center">
           <div />
           <div />
-          <button type="submit" aria-label="Search">
+          <button type="button" onClick={e => { handleClickSingle(e); }}>
             <FontAwesomeIcon className="arrow-icon" icon="arrow-right" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   ));
 
   return (
     <>
-      {AllData}
+      {single ? AllData : <Single singleData={filterSingle} />}
     </>
   );
 };

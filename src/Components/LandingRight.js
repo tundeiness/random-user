@@ -33,11 +33,12 @@ const LandingRight = ({ handleMale, handleFemale }) => {
   // const [display, setDisplay] = useState(false);
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
-  const [single, setSingle] = useState(false);
+  // const [single, setSingle] = useState(false);
   // const [all, setAll] = useState(false);
   // const [click, setClick] = useState(false);
 
   // const [femaleUsers, setFemaleUsers] = useState([]);
+  const [id, setId] = useState('');
 
   const handleClickMale = () => {
     setMale(!male);
@@ -47,8 +48,9 @@ const LandingRight = ({ handleMale, handleFemale }) => {
     setFemale(!female);
   };
 
-  const handleClickSingle = () => {
-    setSingle(!single);
+  const handleClickSingle = e => {
+    setId(e.target.id);
+    // setSingle(!single);
   };
 
   const handleSearch = event => {
@@ -164,6 +166,13 @@ const LandingRight = ({ handleMale, handleFemale }) => {
     return null;
   });
 
+  // const filterSingle = users.filter(data => {
+  //   if (data.id.value === id) {
+  //     return data;
+  //   }
+  //   return null;
+  // });
+
   return (
     <Col md={6} sm={12} xs={12} className="right">
       <div className="d-flex flex-column right_content">
@@ -214,8 +223,8 @@ const LandingRight = ({ handleMale, handleFemale }) => {
             )} */}
             {handleMale && <Male maleUsers={filterMale} />}
             {handleFemale && <Female femaleUsers={filterFemale} />}
-            {single && <Single />}
-            {!handleMale && !handleFemale && !single && <AllUsers users={users} />}
+            {/* {single && <Single />} */}
+            {!handleMale && !handleFemale && <AllUsers users={users} />}
             {/* <Single /> */}
             {/* <span>User listing</span>
             <div className="user-listing ">

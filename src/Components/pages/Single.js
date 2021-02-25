@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
@@ -15,7 +16,7 @@ import { IoIosCloudDownload } from 'react-icons/io';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
-const Single = () => {
+const Single = ({ singleData }) => {
   const [check, setCheck] = useState(false);
 
   const handleCheck = () => {
@@ -75,7 +76,7 @@ const Single = () => {
         </div>
         <div className="d-flex flex-column border border-danger">
           <div className={styles.detail_wrapper}>
-            <span className={styles.mid_name}>Mrs. Shalom Chioma</span>
+            <span className={styles.mid_name}>{singleData.name.title}</span>
             <span className={styles.mid_age}>25</span>
           </div>
           <span className={styles.mid_address}>9278 new road, kilcoole waterford</span>
@@ -117,6 +118,12 @@ const Single = () => {
     </>
   );
 };
+
+// Single.propTypes = {
+//   singleData: PropTypes.objectOf(PropTypes.shape({
+
+//   }))
+// }
 
 // AllUsers.propTypes = {
 //   users: PropTypes.arrayOf(
