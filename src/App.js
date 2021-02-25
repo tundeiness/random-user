@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
+  const [sex, setSex] = useState('all');
   // const [single, setSingle] = useState(false);
 
   const handleClickMale = () => {
@@ -18,6 +19,10 @@ function App() {
 
   const handleClickFemale = () => {
     setFemale(!female);
+  };
+
+  const handleSex = gender => {
+    setSex(gender);
   };
 
   // const handleClickSingle = () => {
@@ -30,11 +35,12 @@ function App() {
         <LandingLeft
           handleMale={handleClickMale}
           handleFemale={handleClickFemale}
-          // handleSingle={handleClickSingle}
+          handleSex={handleSex}
         />
         <LandingRight
           handleMale={handleClickMale}
           handleFemale={handleClickFemale}
+          gender={sex}
         />
       </Row>
     </Container>

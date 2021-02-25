@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import Row from 'react-bootstrap/Row';
@@ -6,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import LandingRight from './LandingRight';
 import '../fontawesome';
 
-const Landing = ({ handleMale, handleFemale }) => {
+const Landing = ({ handleMale, handleFemale, handleSex }) => {
   const [big, setShowBig] = useState(false);
 
   const toggleIcon = () => {
@@ -36,17 +38,17 @@ const Landing = ({ handleMale, handleFemale }) => {
           <div className="d-flex collections">
             <div className="d-flex flex-column user-wrapper pr-4">
               <button type="button" className="btn-user">
-                <FontAwesomeIcon className="users-icon" icon="users" onClick={toggleIcon} style={{ color: '#fff', fontSize: setShowBig ? '1rem' : undefined }} />
+                <FontAwesomeIcon className="users-icon" icon="users" onClick={() => { handleSex('all'); toggleIcon(); }} style={{ color: '#fff', fontSize: setShowBig ? '1rem' : undefined }} />
               </button>
               <span>All Users</span>
             </div>
-            <div className="d-flex flex-column male-wrapper pr-4" onClick={() => handleMale} onKeyPress={handleMale} role="button" aria-hidden>
+            <div className="d-flex flex-column male-wrapper pr-4" onClick={() => { handleSex('male'); toggleIcon(); }} onKeyPress={handleSex} role="button" aria-hidden>
               <button type="button" className="btn-male">
                 <FontAwesomeIcon className="male-icon" icon="male" style={{ color: '#fff' }} />
               </button>
               <span>Male Users</span>
             </div>
-            <div className="d-flex flex-column female-wrapper" onClick={() => handleFemale} onKeyPress={handleFemale} role="button" aria-hidden>
+            <div className="d-flex flex-column female-wrapper" onClick={() => { handleSex('female'); toggleIcon(); }} onKeyPress={handleSex} role="button" aria-hidden>
               <button type="button" className="btn-female">
                 <FontAwesomeIcon className="female-icon" icon="female" style={{ color: '#fff' }} />
               </button>

@@ -591,7 +591,7 @@ div.single-link {
 }
 
 
-div.single-link button {
+div.single-link > .single_button {
   background: #30BBB5 0% 0% no-repeat padding-box;
   box-shadow: 2px 15px 30px #30BBB574;
   border-radius: 7px;
@@ -613,7 +613,7 @@ div.single-link button {
   /* margin-bottom: 1.5rem; */
 }
 
-div.right-bottom-matter button {
+div.right-bottom-matter > .download_button {
   /* margin-top: 1.2rem; */
   background: #7946C1 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
@@ -622,7 +622,7 @@ div.right-bottom-matter button {
   border: none;
 }
 
-div.right-bottom-matter button span{
+div.right-bottom-matter > .download_button > span{
   /* font: normal normal 600 17px/66px Poppins; */
   font-family: Poppins;
   font-weight: 600;

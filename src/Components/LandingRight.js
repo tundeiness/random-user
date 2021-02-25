@@ -22,9 +22,10 @@ import Single from './pages/Single';
 
 import '../fontawesome';
 
-const LandingRight = ({ handleMale, handleFemale }) => {
+const LandingRight = ({ handleMale, handleFemale, gender }) => {
   const [check, setCheck] = useState(false);
   const [users, setUsers] = useState([]);
+  const [sex, setSex] = useState('female');
   const [searchedUser, setSearchedUser] = useState('');
   const [country, setCountry] = useState('');
   // const [loading, setLoading] = useState(false);
@@ -33,6 +34,7 @@ const LandingRight = ({ handleMale, handleFemale }) => {
   // const [display, setDisplay] = useState(false);
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
+  const [page, setPage] = useState(1);
   // const [single, setSingle] = useState(false);
   // const [all, setAll] = useState(false);
   // const [click, setClick] = useState(false);
@@ -145,20 +147,6 @@ const LandingRight = ({ handleMale, handleFemale }) => {
     // country.region.toLowerCase().includes(region.toLocaleLowerCase())
   );
 
-  const filterMale = users.filter(data => {
-    if (data.gender === 'male') {
-      return data;
-    }
-    return null;
-  });
-
-  const filterFemale = users.filter(data => {
-    if (data.gender === 'female') {
-      return data;
-    }
-    return null;
-  });
-
   const filterCountry = users.filter(data => {
     if (data.location.country === country) {
       return data;
@@ -172,6 +160,8 @@ const LandingRight = ({ handleMale, handleFemale }) => {
   //   }
   //   return null;
   // });
+
+  console.log(page);
 
   return (
     <Col md={6} sm={12} xs={12} className="right">
@@ -221,10 +211,10 @@ const LandingRight = ({ handleMale, handleFemale }) => {
               <AllUsers users={users} />
             </>
             )} */}
-            {handleMale && <Male maleUsers={filterMale} />}
-            {handleFemale && <Female femaleUsers={filterFemale} />}
+            {/* {handleMale && <Male maleUsers={filterMale} />}
+            {handleFemale && <Female femaleUsers={filterFemale} />} */}
             {/* {single && <Single />} */}
-            {!handleMale && !handleFemale && <AllUsers users={users} />}
+            {<AllUsers users={users} page={page} sex={gender} />}
             {/* <Single /> */}
             {/* <span>User listing</span>
             <div className="user-listing ">
@@ -265,7 +255,7 @@ const LandingRight = ({ handleMale, handleFemale }) => {
             </div> */}
           </div>
           <div className=" d-flex  justify-content-between right-bottom-matter">
-            <button type="submit" aria-label="Search">
+            <button type="submit" className="download_button" aria-label="Search">
               {/* <i className="lni lni-cloud-download d-inline-block" /> */}
               <IoIosCloudDownload className="d-inline-block cloud-download" style={{ color: 'white', fontSize: '1.5rem' }} />
               <span className="d-inline-block">Download results</span>

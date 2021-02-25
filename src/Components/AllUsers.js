@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
@@ -8,14 +9,29 @@ import uuid from 'react-uuid';
 import PropTypes from 'prop-types';
 import { BsArrowRightShort } from 'react-icons/bs';
 import Single from './pages/Single';
+import Male from './pages/Male';
+import Female from './pages/Female';
+import Gender from './pages/Gender';
+import { USER_PER_PAGE } from '../utils/constants';
 import '../fontawesome';
 
-const AllUsers = ({ users }) => {
+const AllUsers = ({ users, page, sex }) => {
+  console.log(page);
   // if (loading) {
   //   return <h2>Loading...</h2>;
   // }
+  const filteredUsers = users.filter(item => {
+    if (sex === 'all') return true;
+    return item.gender === sex;
+  });
+
   const [single, setSingle] = useState(false);
   const [id, setId] = useState('');
+  const [male, setMale] = useState(false);
+  const [female, setFemale] = useState(false);
+  const start = (page - 1) * USER_PER_PAGE;
+
+  const selectedUsers = users.slice(start, start + USER_PER_PAGE);
   // const data = users;
   // console.log(users);
   // console.log(data);
@@ -53,10 +69,33 @@ const AllUsers = ({ users }) => {
   // useEffect(() => {
   //   handleApiData();
   // }, []);
+
+  const handleClickMale = () => {
+    setMale(!male);
+  };
+
+  const handleClickFemale = () => {
+    setFemale(!female);
+  };
+
   const handleClickSingle = e => {
     setId(e.target.id);
     setSingle(!single);
   };
+
+  const filterMale = users.filter(data => {
+    if (data.gender === 'male') {
+      return data;
+    }
+    return null;
+  });
+
+  const filterFemale = users.filter(data => {
+    if (data.gender === 'female') {
+      return data;
+    }
+    return null;
+  });
 
   const filterSingle = users.filter(data => {
     if (data.id.value === id) {
@@ -67,7 +106,7 @@ const AllUsers = ({ users }) => {
 
   console.log(users);
 
-  const AllData = users.map(item => (
+  const AllData = filteredUsers.map(item => (
     <div key={uuid()} id={`${item.id.value}`} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
@@ -103,20 +142,22 @@ const AllUsers = ({ users }) => {
             </div>
           </div>
         </div>
-        {/* <div className="single-link d-flex flex-column justify-content-around align-items-center">
+        <div className="single-link d-flex flex-column justify-content-around align-items-center">
           <div />
           <div />
-          <button type="button" onClick={e => { handleClickSingle(e); }}>
-            <FontAwesomeIcon className="arrow-icon" icon="arrow-right" />
+          <button className="single_button" type="button" onClick={e => { handleClickSingle(e); }}>
+            {/* <FontAwesomeIcon className="arrow-icon" icon="arrow-right" /> */}
+            <BsArrowRightShort />
           </button>
-        </div> */}
+        </div>
       </div>
     </div>
   ));
 
   return (
     <>
-      {single ? AllData : <Single singleData={filterSingle} />}
+      {/* {single ? AllData : <Single singleData={filterSingle} />} */}
+      {AllData}
     </>
   );
 };
@@ -191,6 +232,7 @@ AllUsers.propTypes = {
 
     }),
   ).isRequired,
+  page: PropTypes.number.isRequired,
 };
 
 export default AllUsers;

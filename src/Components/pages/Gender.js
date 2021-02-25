@@ -3,8 +3,8 @@
 import uuid from 'react-uuid';
 import { IoIosArrowForward } from 'react-icons/io';
 
-const Female = ({ femaleUsers }) => {
-  const Female = femaleUsers.map(item => (
+const Gender = ({ maleUsers }) => {
+  const Male = maleUsers.map(item => (
     <div key={uuid()} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
@@ -53,10 +53,10 @@ const Female = ({ femaleUsers }) => {
 
   return (
     <>
-      {/* <Female /> */}
-      {Female}
+      {/* <Male /> */}
+      {Male}
     </>
   );
 };
 
-export default Female;
+export default Gender;
