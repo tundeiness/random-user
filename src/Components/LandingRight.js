@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 // import Country from 'Country';
 import AllUsers from './AllUsers';
+import All from './All';
 import Male from './pages/Male';
 import Female from './pages/Female';
 import Single from './pages/Single';
@@ -168,110 +169,8 @@ const LandingRight = ({ handleMale, handleFemale, gender }) => {
     <Col md={6} sm={12} xs={12} className="right">
       <div className="d-flex flex-column right_content">
         <div className="d-flex flex-column right-content-guard">
-          <div className="right-top-matter">
-            <span className="d-block heading-right">
-              { gender === 'female'
-                ? 'Female Users'
-                : gender === 'male' ? 'Male Users' : 'All Users'}
-              {/* {gender === 'all' ? 'All Users' : gender === 'male' ? 'Male Users' : 'Female Users'} */}
-            </span>
-            <span className="d-block sub-heading-right">filter by</span>
-            <div className="d-flex justify-content-between toggle-search-wrapper">
-              <div className="search-section-wrapper">
-                <button type="submit" aria-label="Search">
-                  <FontAwesomeIcon className="search-icon" icon="search" />
-                </button>
-                <input type="text" placeholder="Find in list" name="search" id="search-input" autoComplete="off" />
-              </div>
-              <div className="country">
-                <Dropdown className="dropdown">
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Country
-                  </Dropdown.Toggle>
-                  {' '}
-                  {' '}
-                  <Dropdown.Menu className="menu">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something</Dropdown.Item>
-                    {/* <Country filteredCountries={filteredCountries} /> */}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-              <div className="toggle d-flex">
-                <label htmlFor="dom" className="switch">
-                  <input id="dom" type="checkbox" autoComplete="off" onClick={handleCheck} />
-                  <span className="slider round" />
-                </label>
-                <span className=" d-block toggle-name">Show Country</span>
-              </div>
-            </div>
-          </div>
-          <div className="right-mid-matter">
-            {/* <AllUsers users={users} /> */}
-            {/* {click && <Male />}
-            {click && <Female />}
-            {click && <Single />}
-            {!click && (
-            <>
-              <AllUsers users={users} />
-            </>
-            )} */}
-            {/* {handleMale && <Male maleUsers={filterMale} />}
-            {handleFemale && <Female femaleUsers={filterFemale} />} */}
-            {/* {single && <Single />} */}
-            {<AllUsers users={users} page={page} sex={gender} />}
-            {/* <Single /> */}
-            {/* <span>User listing</span>
-            <div className="user-listing ">
-              <div className="d-flex flex-row">
-                <div className="img-container  d-inline-block">
-                  <img src="https://user-images.githubusercontent.com/25479050/100477423-98db8000-30e8-11eb-948b-fe31e1b03f5e.png" className="card-img img-fluid" alt="name" />
-                </div>
-                <div className="summary-content ">
-                  <div className="content-card">
-                    <span className="d-block title">Shalom Chioma</span>
-                    <span className="d-block address">9278 new road kilcoole, waterford</span>
-                    <div className="d-flex other-details">
-                      <div className="email mr-4">
-                        <span className="envelope-wrapper">
-                          <i className="lni lni-envelope" />
-
-                        </span>
-                        <span className="email-detail">brad.gibson@example.com</span>
-                      </div>
-                      <div className="tel">
-                        <span className="phone-wrapper">
-                          <i className="lni lni-phone" />
-
-                        </span>
-                        <span className="phone-detail">011-962-7516</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="single-link d-flex flex-column justify-content-around align-items-center">
-                  <div />
-                  <div />
-                  <button type="submit" aria-label="Search">
-                    <FontAwesomeIcon className="arrow-icon" icon="arrow-right" style={{ color: '#666' }} />
-                  </button>
-                </div>
-              </div>
-            </div> */}
-          </div>
-          <div className=" d-flex  justify-content-between right-bottom-matter">
-            <button type="submit" className="download_button" aria-label="Search">
-              {/* <i className="lni lni-cloud-download d-inline-block" /> */}
-              <IoIosCloudDownload className="d-inline-block cloud-download" style={{ color: 'white', fontSize: '1.5rem' }} />
-              <span className="d-inline-block">Download results</span>
-            </button>
-            <div className="pagination-sm paging">
-              {/* <Pagination.Prev className="prev" />
-              <Pagination.Next className="next" active /> */}
-              {/* <Pagination userPerPage={userPerPage} paginate={paginate} /> */}
-            </div>
-          </div>
+          {/* {<AllUsers users={users} page={page} sex={gender} />} */}
+          {<All users={users} page={page} sex={gender} />}
         </div>
       </div>
     </Col>
