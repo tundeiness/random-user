@@ -21,13 +21,14 @@
 }
 
 .arrowLeft {
-    color: #75d6d1;
+  color: #75d6d1;
+  cursor: pointer;
 }
 
 .singleImgContainer {
-    width: 85%;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+  width: 85%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 /* .imgContainer {

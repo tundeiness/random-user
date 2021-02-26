@@ -16,7 +16,7 @@ import { IoIosCloudDownload } from 'react-icons/io';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
-const Single = ({ singleData }) => {
+const Single = ({ singleData, handleClick }) => {
   const [check, setCheck] = useState(false);
 
   const handleCheck = () => {
@@ -65,7 +65,7 @@ const Single = ({ singleData }) => {
       <div className={`${styles.rightSingle} d-flex flex-row`}>
         <div className={`${styles.imgContainer} d-flex flex-column border border-success`}>
           <div className={`${styles.span}`}>
-            <FaArrowLeft className={`${styles.arrowLeft}`} />
+            <FaArrowLeft className={`${styles.arrowLeft}`} onClick={e => { handleClick(e); }} />
             <span className={`${styles.inner_span}`}>Results</span>
           </div>
           <div className={`${styles.singleImgContainer}`}>

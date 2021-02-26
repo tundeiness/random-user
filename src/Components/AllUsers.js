@@ -94,7 +94,8 @@ const AllUsers = ({ users, page, sex }) => {
   });
 
   const filterSingle = users.filter(data => {
-    if (data.id.value === id) {
+    console.log(data.phone);
+    if (data.phone === id) {
       return data;
     }
     return null;
@@ -108,7 +109,7 @@ const AllUsers = ({ users, page, sex }) => {
   console.log(users);
 
   const FilteredData = filteredUsers.map(item => (
-    <div key={uuid()} id={`${item.id.value}`} className="user-listing ">
+    <div key={uuid()} id={`${item.phone}`} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
           <img src={item.picture.large} className="card-img img-fluid" alt={item.name.first} />
@@ -157,7 +158,7 @@ const AllUsers = ({ users, page, sex }) => {
 
   return (
     <>
-      {single ? FilteredData : <Single singleData={filterSingle} />}
+      {single ? <Single singleData={filterSingle} handleClick={handleClickSingle} /> : FilteredData}
       {/* {FilteredData} */}
     </>
   );
