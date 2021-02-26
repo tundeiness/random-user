@@ -77,26 +77,26 @@ const Single = ({ singleData, handleClick }) => {
             <img
               src={singleData[0].picture.large}
               className={`${styles.img} card-img img-fluid`}
-              alt="user"
+              alt={singleData[0].name.first}
             />
           </div>
         </div>
         <div className="d-flex flex-column border border-danger">
           <div className={styles.detail_wrapper}>
-            <div className={styles.mid_name}>
+            <span className={styles.mid_name}>
               <span>{singleData[0].name.title}</span>
               <span>{singleData[0].name.first}</span>
               <span>{singleData[0].name.last}</span>
               {/* Mrs. Shalom Chioma */}
-            </div>
+            </span>
             <span className={styles.mid_age}>{singleData[0].dob.age}</span>
           </div>
-          <div className={styles.mid_address}>
+          <span className={styles.mid_address}>
             <span>{singleData[0].location.street.number}</span>
             <span>{singleData[0].location.street.name}</span>
             <span>{singleData[0].location.city}</span>
             {/* 9278 new road, kilcoole waterford */}
-          </div>
+          </span>
           <div className={`${styles.mid_email}`}>
             <span><BiEnvelope className={`${styles.biEnvelope}`} /></span>
             {' '}
@@ -125,7 +125,7 @@ const Single = ({ singleData, handleClick }) => {
         </div> */}
       </div>
       {/* <div className=" d-flex  justify-content-between right-bottom-matter">
-            <button type="submit" aria-label="Search">
+            <button type="button" aria-label="Search">
               <i className="lni lni-cloud-download d-inline-block" />
               <span className="d-inline-block">Download results</span>
             </button>

@@ -26,14 +26,11 @@
 }
 
 .singleImgContainer {
-  width: 85%;
+  width: 11rem;
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
 
-/* .imgContainer {
-    width: 130%;
-} */
 
 .img {
     /* margin: .5rem auto; */
@@ -47,7 +44,6 @@
 
   .mid_name {
     text-align: left;
-    /* font: normal normal bold 32px/105px Poppins; */
     font-weight: bold;
     font-family: Poppins;
     font-size: 1.3rem;
