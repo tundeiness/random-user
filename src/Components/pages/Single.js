@@ -23,6 +23,8 @@ const Single = ({ singleData }) => {
     setCheck(!check);
   };
 
+  console.log(singleData);
+
   return (
     <>
       {/* <div className="d-flex flex-column right_content">
@@ -76,7 +78,7 @@ const Single = ({ singleData }) => {
         </div>
         <div className="d-flex flex-column border border-danger">
           <div className={styles.detail_wrapper}>
-            <span className={styles.mid_name}>{singleData.name.title}</span>
+            <span className={styles.mid_name}>Mrs. Shalom Chioma</span>
             <span className={styles.mid_age}>25</span>
           </div>
           <span className={styles.mid_address}>9278 new road, kilcoole waterford</span>

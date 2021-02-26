@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
@@ -168,7 +169,12 @@ const LandingRight = ({ handleMale, handleFemale, gender }) => {
       <div className="d-flex flex-column right_content">
         <div className="d-flex flex-column right-content-guard">
           <div className="right-top-matter">
-            <span className="d-block heading-right">All Users</span>
+            <span className="d-block heading-right">
+              { gender === 'female'
+                ? 'Female Users'
+                : gender === 'male' ? 'Male Users' : 'All Users'}
+              {/* {gender === 'all' ? 'All Users' : gender === 'male' ? 'Male Users' : 'Female Users'} */}
+            </span>
             <span className="d-block sub-heading-right">filter by</span>
             <div className="d-flex justify-content-between toggle-search-wrapper">
               <div className="search-section-wrapper">

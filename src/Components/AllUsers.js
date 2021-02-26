@@ -20,10 +20,6 @@ const AllUsers = ({ users, page, sex }) => {
   // if (loading) {
   //   return <h2>Loading...</h2>;
   // }
-  const filteredUsers = users.filter(item => {
-    if (sex === 'all') return true;
-    return item.gender === sex;
-  });
 
   const [single, setSingle] = useState(false);
   const [id, setId] = useState('');
@@ -104,9 +100,14 @@ const AllUsers = ({ users, page, sex }) => {
     return null;
   });
 
+  const filteredUsers = users.filter(item => {
+    if (sex === 'all') return true;
+    return item.gender === sex;
+  });
+
   console.log(users);
 
-  const AllData = filteredUsers.map(item => (
+  const FilteredData = filteredUsers.map(item => (
     <div key={uuid()} id={`${item.id.value}`} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
@@ -147,7 +148,7 @@ const AllUsers = ({ users, page, sex }) => {
           <div />
           <button className="single_button" type="button" onClick={e => { handleClickSingle(e); }}>
             {/* <FontAwesomeIcon className="arrow-icon" icon="arrow-right" /> */}
-            <BsArrowRightShort />
+            <BsArrowRightShort className="arrow-icon" icon="arrow-right" />
           </button>
         </div>
       </div>
@@ -156,8 +157,8 @@ const AllUsers = ({ users, page, sex }) => {
 
   return (
     <>
-      {/* {single ? AllData : <Single singleData={filterSingle} />} */}
-      {AllData}
+      {single ? FilteredData : <Single singleData={filterSingle} />}
+      {/* {FilteredData} */}
     </>
   );
 };

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import LandingRight from './LandingRight';
 import '../fontawesome';
 
-const Landing = ({ handleMale, handleFemale, handleSex }) => {
+const Landing = ({ handleSex }) => {
   const [big, setShowBig] = useState(false);
 
   const toggleIcon = () => {
@@ -63,8 +63,8 @@ const Landing = ({ handleMale, handleFemale, handleSex }) => {
 };
 
 Landing.propTypes = {
-  handleMale: PropTypes.func.isRequired,
-  handleFemale: PropTypes.func.isRequired,
+  handleSex: PropTypes.func.isRequired,
+  // handleFemale: PropTypes.func.isRequired,
 };
 
 export default Landing;
