@@ -75,7 +75,9 @@ const AllUsers = ({ users, page, sex }) => {
   };
 
   const handleClickSingle = e => {
-    setId(e.target.id);
+    // alert(e.currentTarget.id);
+    // console.log(e.currentTarget.id);
+    setId(e.currentTarget.id);
     setSingle(!single);
   };
 
@@ -96,6 +98,7 @@ const AllUsers = ({ users, page, sex }) => {
   const filterSingle = users.filter(data => {
     console.log(data.phone);
     if (data.phone === id) {
+      localStorage.setItem('data', JSON.stringify(data));
       return data;
     }
     return null;
@@ -109,7 +112,7 @@ const AllUsers = ({ users, page, sex }) => {
   console.log(users);
 
   const FilteredData = filteredUsers.map(item => (
-    <div key={uuid()} id={`${item.phone}`} className="user-listing ">
+    <div key={uuid()} id={item.phone} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
           <img src={item.picture.large} className="card-img img-fluid" alt={item.name.first} />
@@ -147,7 +150,7 @@ const AllUsers = ({ users, page, sex }) => {
         <div className="single-link d-flex flex-column justify-content-around align-items-center">
           <div />
           <div />
-          <button className="single_button" type="button" onClick={e => { handleClickSingle(e); }}>
+          <button className="single_button" id={item.phone} type="button" onClick={e => { handleClickSingle(e); }}>
             {/* <FontAwesomeIcon className="arrow-icon" icon="arrow-right" /> */}
             <BsArrowRightShort className="arrow-icon" icon="arrow-right" />
           </button>

@@ -23,7 +23,12 @@ const Single = ({ singleData, handleClick }) => {
     setCheck(!check);
   };
 
-  console.log(singleData);
+  const userData = localStorage.getItem('data');
+  // const newData = JSON.stringify(userData);
+
+  console.log(singleData[0]);
+
+  // const joinedDate = singleData[0].registered.date.slice(0, 10);
 
   return (
     <>
@@ -70,7 +75,7 @@ const Single = ({ singleData, handleClick }) => {
           </div>
           <div className={`${styles.singleImgContainer}`}>
             <img
-              src="https://user-images.githubusercontent.com/25479050/100477423-98db8000-30e8-11eb-948b-fe31e1b03f5e.png"
+              src={singleData[0].picture.large}
               className={`${styles.img} card-img img-fluid`}
               alt="user"
             />
@@ -78,30 +83,40 @@ const Single = ({ singleData, handleClick }) => {
         </div>
         <div className="d-flex flex-column border border-danger">
           <div className={styles.detail_wrapper}>
-            <span className={styles.mid_name}>Mrs. Shalom Chioma</span>
-            <span className={styles.mid_age}>25</span>
+            <div className={styles.mid_name}>
+              <span>{singleData[0].name.title}</span>
+              <span>{singleData[0].name.first}</span>
+              <span>{singleData[0].name.last}</span>
+              {/* Mrs. Shalom Chioma */}
+            </div>
+            <span className={styles.mid_age}>{singleData[0].dob.age}</span>
           </div>
-          <span className={styles.mid_address}>9278 new road, kilcoole waterford</span>
+          <div className={styles.mid_address}>
+            <span>{singleData[0].location.street.number}</span>
+            <span>{singleData[0].location.street.name}</span>
+            <span>{singleData[0].location.city}</span>
+            {/* 9278 new road, kilcoole waterford */}
+          </div>
           <div className={`${styles.mid_email}`}>
             <span><BiEnvelope className={`${styles.biEnvelope}`} /></span>
             {' '}
-            <span>bradford@example.com</span>
+            <span>{singleData[0].email}</span>
           </div>
           <div className={styles.other_wrapper}>
             <span className={styles.join_date}>
               Joined:
               {' '}
-              <span>22-05-21</span>
+              <span>{singleData[0].registered.date.slice(0, 10)}</span>
             </span>
             <div className={styles.mid_tel}>
               <span><BiPhoneCall className={`${styles.biPhoneCall}`} /></span>
               {' '}
-              <span>011-456-2111</span>
+              <span>{singleData[0].phone}</span>
             </div>
             <div className={styles.mid_cell}>
               <span><MdPhoneAndroid className={`${styles.biPhoneAndroid}`} /></span>
               {' '}
-              <span>011-962-7512</span>
+              <span>{singleData[0].cell}</span>
             </div>
           </div>
         </div>
@@ -127,76 +142,77 @@ const Single = ({ singleData, handleClick }) => {
 //   }))
 // }
 
-// AllUsers.propTypes = {
-//   users: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       cell: PropTypes.string,
-//       dob: PropTypes.objectOf(
-//         PropTypes.shape({
-//           date: PropTypes.string,
-//           age: PropTypes.number,
-//         }),
-//       ),
-//       gender: PropTypes.string,
-//       id: PropTypes.objectOf(
-//         PropTypes.shape({
-//           name: PropTypes.string,
-//           value: PropTypes.string,
-//         }),
-//       ),
-//       location: PropTypes.objectOf(
-//         PropTypes.shape({
-//           street: PropTypes.string,
-//           city: PropTypes.string,
-//           coordinates: PropTypes.objectOf(
-//             PropTypes.shape({
-//               longitude: PropTypes.string,
-//               latitude: PropTypes.string,
-//             }),
-//           ),
-//           state: PropTypes.string,
-//           country: PropTypes.string,
-//           postcode: PropTypes.number,
-//           timezone: PropTypes.string,
-//         }),
-//       ),
-//       login: PropTypes.objectOf(
-//         PropTypes.shape({
-//           uuid: PropTypes.string,
-//           username: PropTypes.string,
-//           password: PropTypes.string,
-//           salt: PropTypes.string,
-//           md5: PropTypes.string,
-//           sha256: PropTypes.string,
-//           sha1: PropTypes.string,
-//         }),
-//       ),
-//       name: PropTypes.objectOf(
-//         PropTypes.shape({
-//           title: PropTypes.string,
-//           first: PropTypes.string,
-//           last: PropTypes.string,
-//         }),
-//       ),
-//       nat: PropTypes.string,
-//       phone: PropTypes.string,
-//       picture: PropTypes.objectOf(
-//         PropTypes.shape({
-//           large: PropTypes.string,
-//           medium: PropTypes.string,
-//           thumbnail: PropTypes.string,
-//         }),
-//       ),
-//       registered: PropTypes.objectOf(
-//         PropTypes.shape({
-//           date: PropTypes.string,
-//           age: PropTypes.number,
-//         }),
-//       ),
-//       email: PropTypes.string,
+Single.propTypes = {
+  singleData: PropTypes.arrayOf(
+    PropTypes.shape({
+      cell: PropTypes.string,
+      dob: PropTypes.objectOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+          age: PropTypes.number,
+        }),
+      ),
+      gender: PropTypes.string,
+      id: PropTypes.objectOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          value: PropTypes.string,
+        }),
+      ),
+      location: PropTypes.objectOf(
+        PropTypes.shape({
+          street: PropTypes.string,
+          city: PropTypes.string,
+          coordinates: PropTypes.objectOf(
+            PropTypes.shape({
+              longitude: PropTypes.string,
+              latitude: PropTypes.string,
+            }),
+          ),
+          state: PropTypes.string,
+          country: PropTypes.string,
+          postcode: PropTypes.number,
+          timezone: PropTypes.string,
+        }),
+      ),
+      login: PropTypes.objectOf(
+        PropTypes.shape({
+          uuid: PropTypes.string,
+          username: PropTypes.string,
+          password: PropTypes.string,
+          salt: PropTypes.string,
+          md5: PropTypes.string,
+          sha256: PropTypes.string,
+          sha1: PropTypes.string,
+        }),
+      ),
+      name: PropTypes.objectOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          first: PropTypes.string,
+          last: PropTypes.string,
+        }),
+      ),
+      nat: PropTypes.string,
+      phone: PropTypes.string,
+      picture: PropTypes.objectOf(
+        PropTypes.shape({
+          large: PropTypes.string,
+          medium: PropTypes.string,
+          thumbnail: PropTypes.string,
+        }),
+      ),
+      registered: PropTypes.objectOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+          age: PropTypes.number,
+        }),
+      ),
+      email: PropTypes.string,
 
-//     }),
-//   ).isRequired,
-// };
+    }),
+  ).isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default Single;
