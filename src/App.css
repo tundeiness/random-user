@@ -620,6 +620,15 @@ div.right-bottom-matter > .download_button {
   border-radius: 35px;
   opacity: 1;
   border: none;
+  cursor: pointer;
+}
+
+.single_page {
+  background-color: gainsboro;
+  box-shadow: 0px 3px 6px #00000029;
+  cursor: default !important;
+  border-radius: 35px;
+  border: none !important;
 }
 
 div.right-bottom-matter > .download_button > span{

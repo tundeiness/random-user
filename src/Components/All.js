@@ -211,11 +211,11 @@ const AllUsers = ({ users, page, sex }) => {
 
       <div className="right-mid-matter">
         {/* {<AllUsers users={users} page={page} sex={gender} />} */}
-        {single ? <Single singleData={filterSingle} handleClick={handleClickSingle} /> : FilteredData}
+        {single ? <Single toggleStyle={single} singleData={filterSingle} handleClick={handleClickSingle} /> : FilteredData}
       </div>
       {single ? null : (
         <div className=" d-flex  justify-content-between right-bottom-matter">
-          <button type="submit" className="download_button" aria-label="Search">
+          <button type="button" className="download_button" aria-label="Search">
             {/* <i className="lni lni-cloud-download d-inline-block" /> */}
             <IoIosCloudDownload className="d-inline-block cloud-download" style={{ color: 'white', fontSize: '1.5rem' }} />
             <span className="d-inline-block">Download results</span>

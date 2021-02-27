@@ -16,7 +16,7 @@ import { IoIosCloudDownload } from 'react-icons/io';
 import styles from '../../styles/Single.module.css';
 // import '../fontawesome';
 
-const Single = ({ singleData, handleClick }) => {
+const Single = ({ singleData, handleClick, toggleStyle }) => {
   const [check, setCheck] = useState(false);
 
   const handleCheck = () => {
@@ -134,7 +134,7 @@ const Single = ({ singleData, handleClick }) => {
 
       </div>
       <div className=" d-flex  justify-content-between right-bottom-matter">
-        <button type="submit" className="download_button" aria-label="Search">
+        <button type="submit" className={toggleStyle ? 'single_page' : 'download_button'} aria-label="Search">
           {/* <i className="lni lni-cloud-download d-inline-block" /> */}
           <IoIosCloudDownload className="d-inline-block cloud-download" style={{ color: 'white', fontSize: '1.5rem' }} />
           <span className="d-inline-block">Download results</span>
