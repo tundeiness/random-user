@@ -28,9 +28,15 @@ const AllUsers = ({ users, page, sex }) => {
   const [id, setId] = useState('');
   const [male, setMale] = useState(false);
   const [female, setFemale] = useState(false);
+  const [usr, setUsr] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [userPerPage, setuserPerPage] = useState(3);
   const start = (page - 1) * USER_PER_PAGE;
+  const indexOfLastUser = currentPage * userPerPage;
+  const indexOfFirstUser = indexOfLastUser - userPerPage;
+  // const selectedUser = usr.slice(indexOfFirstUser, indexOfLastUser);
 
-  const selectedUsers = users.slice(start, start + USER_PER_PAGE);
+  // const selectedUsers = users.slice(start, start + USER_PER_PAGE);
   // const data = users;
   // console.log(users);
   // console.log(data);
@@ -112,9 +118,12 @@ const AllUsers = ({ users, page, sex }) => {
     return item.gender === sex;
   });
 
+  const selectedUser = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+  console.log('test =>', selectedUser);
+
   console.log(users);
 
-  const FilteredData = filteredUsers.map(item => (
+  const FilteredData = selectedUser.map(item => (
     <div key={uuid()} id={item.phone} className="user-listing ">
       <div className="d-flex flex-row justify-content-between">
         <div className="img-container  d-inline-block">
