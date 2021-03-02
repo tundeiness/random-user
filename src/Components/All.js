@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import { BsArrowRightShort } from 'react-icons/bs';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { IoIosCloudDownload } from 'react-icons/io';
+import Pagination from './pages/Pagination';
 import Single from './pages/Single';
 import Male from './pages/Male';
 import Female from './pages/Female';
@@ -119,6 +120,8 @@ const AllUsers = ({ users, page, sex }) => {
   });
 
   const selectedUser = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+  const prevPage = currentPage - 1;
+  const nextPage = currentPage + 1;
   console.log('test =>', selectedUser);
 
   console.log(users);
@@ -230,6 +233,7 @@ const AllUsers = ({ users, page, sex }) => {
             <span className="d-inline-block">Download results</span>
           </button>
           <div className="pagination-sm paging">
+            <Pagination userPerPage={userPerPage} totalUsers={users.length} prevPage={prevPage} nextPage={nextPage} />
             {/* <Pagination.Prev className="prev" />
          <Pagination.Next className="next" active /> */}
             {/* <Pagination userPerPage={userPerPage} paginate={paginate} /> */}

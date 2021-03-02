@@ -5,7 +5,9 @@ import React, { useState, useEffect } from 'react';
 // import {BsChevronRight, } from 'react-icons/bs';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
-const Pagination = ({ userPerPage, totalUsers, paginate }) => {
+const Pagination = ({
+  userPerPage, totalUsers, paginate, prevPage, nextPage,
+}) => {
   const pageNumber = [];
 
   for (let i = 1; i <= Math.ceil(totalUsers / userPerPage); i += 1) {
@@ -16,10 +18,10 @@ const Pagination = ({ userPerPage, totalUsers, paginate }) => {
     <div>
       <ul className="pagination">
         <li className="page-item">
-          <a className="page-link" href="/left"><BiChevronLeft /></a>
+          <a className="page-link" href="/left" onClick={() => prevPage()}><BiChevronLeft /></a>
         </li>
         <li className="page-item">
-          <a className="page-link" href="/right"><BiChevronRight /></a>
+          <a className="page-link" href="/right" onClick={() => nextPage()}><BiChevronRight /></a>
         </li>
       </ul>
     </div>
