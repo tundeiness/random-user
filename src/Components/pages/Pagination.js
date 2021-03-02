@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+// import {BsChevronRight, } from 'react-icons/bs';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 const Pagination = ({ userPerPage, totalUsers, paginate }) => {
   const pageNumber = [];
@@ -10,18 +13,16 @@ const Pagination = ({ userPerPage, totalUsers, paginate }) => {
   }
 
   return (
-    <nav>
+    <div>
       <ul className="pagination">
-        {pageNumber.map(num => (
-          <li key={num} className="page-item">
-            <a onClick={() => paginate(number)} href="!#" className="page-link">
-              {num}
-            </a>
-
-          </li>
-        ))}
+        <li className="page-item">
+          <a className="page-link" href="/left"><BiChevronLeft /></a>
+        </li>
+        <li className="page-item">
+          <a className="page-link" href="/right"><BiChevronRight /></a>
+        </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 export default Pagination;
