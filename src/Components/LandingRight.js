@@ -134,7 +134,7 @@ const LandingRight = ({ handleMale, handleFemale, gender }) => {
   //   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=3')
+    fetch('https://randomuser.me/api/?results=20')
       .then(res => res.json())
       .then(body => setUsers(body.results));
     // const data = localStorage.getItem('data');
