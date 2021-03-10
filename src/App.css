@@ -414,9 +414,11 @@ div.country #dropdown-basic {
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 25px;
-  margin: .3rem .3rem;
+  width: 30px;
+  height: 18px;
+  /* margin: .9rem 0; */
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 
 .switch input { 
@@ -440,9 +442,9 @@ div.country #dropdown-basic {
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: 18px;
+  height: 14px;
+  width: 14px;
+  left: 13.5px;
   bottom: 2px;
   background-color: white;
   transition: .4s;
@@ -472,18 +474,16 @@ input:checked + .slider:before {
 
 
 .toggle-name {
-  /* font: normal normal 600 17px/79px Poppins; */
   letter-spacing: -0.42px;
   color: #000000;
   opacity: 0.62;
   font-family: poppins;
   font-size: 10px;
-  margin: 10px auto;
-}
-
-
-.menu {
-  
+  margin-top: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  font-family: poppins;
+  font-weight: 600;
 }
 
 .user-listing {
