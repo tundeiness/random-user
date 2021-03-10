@@ -196,9 +196,14 @@ const AllUsers = ({ users, page, sex }) => {
               <input type="text" placeholder="Find in list" name="search" id="search-input" autoComplete="off" />
             </div>
             <div className="country">
+              {/* <select class="classic">
+                <option>CSS SELECT arrow (classic)</option>
+                <option>No external background image</option>
+                <option>No wrapper</option>
+              </select> */}
               <Dropdown className="dropdown">
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Country
+                  <span>Country</span>
                 </Dropdown.Toggle>
                 {' '}
                 {' '}

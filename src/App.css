@@ -334,22 +334,26 @@ div.collections {
 }
 
 div.search-section-wrapper button {
-  background: #3C3F54 0% 0% no-repeat padding-box;
-  opacity: 0.11;
-  width: 35px;
+  background: rgb(218, 218, 218, 0.6) 0% 0% no-repeat padding-box;
+  /* opacity: 0.11; */
+  width: 39px;
   height: 40px;
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
-  border: 1px solid #3C3F54;
-  /* color: black !important; */
-  /* opacity: 0.11; */
+  border: 1px solid rgb(218, 218, 218, 0.6);
 }
 
 .search-section-wrapper > button > .search-icon{
-  /* border: none; */
-  /* color: #262A41 !important; */
-  color: #fff !important;
-  opacity: 0.9;
+  color: #000 !important;
+  opacity: 0.3;
+  font-size: 0.9rem;
+}
+
+.search-section-wrapper > ::placeholder {
+  color: black !important;
+  opacity: 0.3;
+  font-size: 0.72rem;
+  font-family: poppins;
 }
 
 div.search-section-wrapper input[type=text] {
@@ -357,39 +361,48 @@ div.search-section-wrapper input[type=text] {
   padding-bottom: .41rem;
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
-  border: 1px solid #3C3F54;
-  background: #3C3F54 0% 0% no-repeat padding-box;
-  opacity: 0.1;
+  border: 1px solid  rgb(218, 218, 218, 0.6);
+  background:  rgb(218, 218, 218, 0.6) 0% 0% no-repeat padding-box;
+  /* opacity: 0.5; */
 }
 
 
 div.search-section-wrapper input[type=text]:focus {
   outline: none;
-  border: 1px solid #3C3F54;
-  background: #3C3F54 0% 0% no-repeat padding-box;
-  opacity: 0.11;
+  border: 1px solid rgb(218, 218, 218, 0.6);
+  background:  rgb(218, 218, 218, 0.6) 0% 0% no-repeat padding-box;
+  /* opacity: 0.11; */
 }
 
 
 div.country #dropdown-basic {
-  background: #3C3F54 0% 0% no-repeat padding-box;
-  border: 1px solid #3C3F54;
+  /* background: #3C3F54 0% 0% no-repeat padding-box; */
+  border: 1px solid rgb(218, 218, 218, 0.6);
   border-radius: 35px;
-  /* opacity: 0.11; */
   font-size: 12px;
-  padding-top: .4rem;
-  /* padding-bottom: .3rem; */
   padding-left: .8rem;
   padding-right: .8rem;
   margin-top: .15rem;
   /* font: normal normal 600 12px/15px Poppins; */
   letter-spacing: -0.02px;
-/* color: #262A41;
-opacity: 0.73; */
+  color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(218, 218, 218, 0.6);
+  font-family: poppins;
+  font-weight: 600;
+  /* opacity: 0.5; */
 }
 
+#dropdown-basic > span {
+  display: inline-block;
+  margin-top: -0.5rem;
+}
+
+
 .dropdown-toggle::after {
-  margin-left: 1.255rem;
+  margin-left: 1rem;
+  margin-top: 0.6rem;
+  color: #000 !important;
+  font-size: 1.2rem;
 }
 
 
