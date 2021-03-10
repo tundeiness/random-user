@@ -147,7 +147,7 @@ const AllUsers = ({ users, page, sex }) => {
               <span className="d-inline-block address">{item.location.city}</span>
             </div>
             <div className="d-flex other-details">
-              <div className="email mr-4">
+              <div className="email mr-2">
                 <span className="envelope-wrapper pr-2">
                   <i className="lni lni-envelope" />
                 </span>

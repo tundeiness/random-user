@@ -55,7 +55,7 @@ body {
 .right_content {
   border: 1px solid wheat;
   background-color: #fff;
-  margin: 1rem .1rem;
+  margin: .7rem .1rem;
 }
 
 
@@ -297,7 +297,6 @@ div.collections {
 
 .male-button  {
   background: #30BBB5 0% 0% no-repeat padding-box;
-  /* border-radius: 28px; */
   opacity: 1;
   
 }
@@ -306,7 +305,7 @@ div.collections {
 .right-content-guard {
   border: 1px solid green;
   width: 80%;
-  margin: 3rem auto;
+  margin: 1.8rem auto;
 }
 
 
@@ -526,7 +525,24 @@ img {
 }
 
 .content-card {
-  margin: 1.3rem auto;
+  margin: .5rem auto;
+}
+
+/* .content-card > .seperator {
+  font-family: poppins;
+  font-size: 1px !important;
+} */
+
+.tel {
+
+}
+
+.envelope-wrapper {
+  
+}
+
+.email {
+
 }
 
 .title {
@@ -545,22 +561,26 @@ img {
   /* font: italic normal medium 18px/68px Poppins; */
   font-weight: medium;
   font-family: poppins;
-  font-size: 13px;
+  font-size: 12px;
   font-style: italic;
   /* line-height: 1; */
   letter-spacing: -0.02px;
   color: #262A41;
   opacity: 0.69;
-  margin-top: .6rem;
+  margin-top: 0.6rem;
 }
 
 .other-details {
-  margin-top: .6rem;
+  margin-top: 0.4rem;
 }
 
 .envelope-wrapper,
 .phone-wrapper {
   /* margin-right: .1rem; */
+}
+
+.envelope-wrapper {
+  margin: 0 auto !important;
 }
 
 span.envelope-wrapper .lni-envelope {
@@ -573,7 +593,7 @@ span.envelope-wrapper .lni-envelope {
   /* font: normal normal 300 18px/68px Poppins; */
   font-family: Poppins;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: -0.02px;
   color: #262A41;
   opacity: 0.52;
@@ -586,7 +606,7 @@ span.phone-wrapper .lni-phone {
 }
 
 .phone-detail {
-  font-family: Poppins;
+  font-family: poppins;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: -0.02px;
