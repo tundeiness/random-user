@@ -187,7 +187,7 @@ const AllUsers = ({ users, page, sex }) => {
               : sex === 'male' ? 'Male Users' : 'All Users'}
             {/* {gender === 'all' ? 'All Users' : gender === 'male' ? 'Male Users' : 'Female Users'} */}
           </span>
-          <span className="d-block sub-heading-right">filter by</span>
+          <span className="d-block sub-heading-right">Filter by</span>
           <div className="d-flex justify-content-between toggle-search-wrapper">
             <div className="search-section-wrapper">
               <button type="submit" aria-label="Search">
