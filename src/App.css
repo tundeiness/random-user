@@ -506,9 +506,7 @@ input:checked + .slider:before {
 }
 
 .img-container {
-  width: 15%;
-  /* margin-left: 1rem;
-  margin-right: 1rem; */
+  width: 14%;
   margin: 1rem 1rem;
 }
 
